@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bee My Love - Let love buzz in</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#FFE5B4',secondary:'#FFD1DC'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Quicksand', sans-serif;
+overflow-x: hidden;
+}
+.font-handwritten {
+font-family: 'Caveat', cursive;
+}
+.honeycomb-pattern {
+background-image: radial-gradient(#FFE5B4 15%, transparent 16%),
+radial-gradient(#FFE5B4 15%, transparent 16%);
+background-size: 40px 40px;
+background-position: 0 0, 20px 20px;
+opacity: 0.2;
+}
+.bee {
+animation: fly 15s infinite linear;
+position: absolute;
+z-index: 10;
+}
+.bee-1 { animation-duration: 20s; animation-delay: 0s; }
+.bee-2 { animation-duration: 25s; animation-delay: 2s; }
+.bee-3 { animation-duration: 18s; animation-delay: 5s; }
+.bee-4 { animation-duration: 22s; animation-delay: 8s; }
+.bee-5 { animation-duration: 30s; animation-delay: 10s; }
+@keyframes fly {
+0% {
+transform: translate(0, 0) rotate(0deg);
+opacity: 0;
+}
+10% {
+opacity: 1;
+}
+20% {
+transform: translate(100px, -50px) rotate(20deg);
+}
+40% {
+transform: translate(200px, 100px) rotate(-10deg);
+}
+60% {
+transform: translate(300px, -80px) rotate(15deg);
+}
+80% {
+transform: translate(400px, 60px) rotate(-20deg);
+}
+90% {
+opacity: 1;
+}
+100% {
+transform: translate(500px, 0) rotate(0deg);
+opacity: 0;
+}
+}
+.floating {
+animation: float 6s ease-in-out infinite;
+}
+.floating-slow {
+animation: float 8s ease-in-out infinite;
+}
+.floating-slower {
+animation: float 10s ease-in-out infinite;
+}
+@keyframes float {
+0% {
+transform: translateY(0px);
+}
+50% {
+transform: translateY(-20px);
+}
+100% {
+transform: translateY(0px);
+}
+}
+.custom-checkbox input[type="checkbox"] {
+display: none;
+}
+.custom-checkbox label {
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+.custom-checkbox label::before {
+content: "";
+width: 20px;
+height: 20px;
+margin-right: 10px;
+border: 2px solid #FFD1DC;
+border-radius: 4px;
+transition: all 0.3s;
+}
+.custom-checkbox input[type="checkbox"]:checked + label::before {
+background-color: #FFD1DC;
+border-color: #FFD1DC;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+background-size: 14px;
+background-position: center;
+background-repeat: no-repeat;
+}
+.custom-radio input[type="radio"] {
+display: none;
+}
+.custom-radio label {
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+.custom-radio label::before {
+content: "";
+width: 20px;
+height: 20px;
+margin-right: 10px;
+border: 2px solid #FFD1DC;
+border-radius: 50%;
+transition: all 0.3s;
+}
+.custom-radio input[type="radio"]:checked + label::before {
+border: 6px solid #FFD1DC;
+background-color: white;
+}
+.custom-range {
+-webkit-appearance: none;
+width: 100%;
+height: 8px;
+border-radius: 5px;
+background: #f0f0f0;
+outline: none;
+}
+.custom-range::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 24px;
+height: 24px;
+border-radius: 50%;
+background: #FFD1DC;
+cursor: pointer;
+border: 2px solid white;
+box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.custom-range::-moz-range-thumb {
+width: 24px;
+height: 24px;
+border-radius: 50%;
+background: #FFD1DC;
+cursor: pointer;
+border: 2px solid white;
+box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 26px;
+}
+.custom-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #f0f0f0;
+transition: .4s;
+border-radius: 34px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: #FFD1DC;
+}
+input:checked + .slider:before {
+transform: translateX(24px);
+}
+.message-bubble {
+position: relative;
+border-radius: 18px;
+padding: 10px 15px;
+margin: 5px 0;
+max-width: 70%;
+}
+.message-bubble.sent {
+background-color: #FFE5B4;
+margin-left: auto;
+border-bottom-right-radius: 4px;
+}
+.message-bubble.received {
+background-color: #FFD1DC;
+margin-right: auto;
+border-bottom-left-radius: 4px;
+}
+.honeycomb-card {
+position: relative;
+transition: transform 0.3s;
+}
+.honeycomb-card:hover {
+transform: translateY(-5px);
+}
+.honeycomb-card::before {
+content: '';
+position: absolute;
+top: -5px;
+left: -5px;
+right: -5px;
+bottom: -5px;
+border-radius: 12px;
+background: linear-gradient(45deg, #FFE5B4, #FFD1DC, #FFA500);
+z-index: -1;
+opacity: 0;
+transition: opacity 0.3s;
+}
+.honeycomb-card:hover::before {
+opacity: 1;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Animated Bees -->
+<div class="fixed w-full h-full pointer-events-none overflow-hidden">
+<div class="bee bee-1 top-20 left-10">
+<div class="w-8 h-8 flex items-center justify-center text-yellow-400">
+<i class="ri-heart-3-fill ri-lg"></i>
+</div>
+</div>
+<div class="bee bee-2 top-40 left-20">
+<div class="w-10 h-10 flex items-center justify-center text-yellow-500">
+<i class="ri-heart-3-fill ri-xl"></i>
+</div>
+</div>
+<div class="bee bee-3 top-60 left-5">
+<div class="w-6 h-6 flex items-center justify-center text-pink-300">
+<i class="ri-heart-3-fill ri-lg"></i>
+</div>
+</div>
+<div class="bee bee-4 top-80 left-15">
+<div class="w-8 h-8 flex items-center justify-center text-yellow-400">
+<i class="ri-heart-3-fill ri-lg"></i>
+</div>
+</div>
+<div class="bee bee-5 top-100 left-25">
+<div class="w-10 h-10 flex items-center justify-center text-pink-300">
+<i class="ri-heart-3-fill ri-xl"></i>
+</div>
+</div>
+</div>
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="#" class="flex items-center gap-2">
+<div class="w-10 h-10 flex items-center justify-center bg-yellow-300 rounded-full">
+<i class="ri-heart-3-fill text-white ri-lg"></i>
+</div>
+<span class="text-2xl font-['Pacifico'] text-yellow-500">Bee My Love</span>
+</a>
+<nav class="hidden md:flex items-center space-x-6">
+<a href="#" class="text-gray-700 hover:text-yellow-500 font-medium transition-colors">Home</a>
+<a href="#" class="text-gray-700 hover:text-yellow-500 font-medium transition-colors">How It Works</a>
+<a href="#" class="text-gray-700 hover:text-yellow-500 font-medium transition-colors">Success Stories</a>
+<a href="#" class="text-gray-700 hover:text-yellow-500 font-medium transition-colors">About Us</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 text-gray-700 border border-gray-200 hover:border-yellow-400 rounded-button transition-colors whitespace-nowrap">Sign In</button>
+<button class="px-4 py-2 bg-primary text-gray-700 hover:bg-yellow-300 rounded-button shadow-sm transition-colors whitespace-nowrap">Register</button>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative overflow-hidden">
+<div class="honeycomb-pattern absolute inset-0 opacity-30"></div>
+<div style="background-image: url('https://readdy.ai/api/search-image?query=A%20dreamy%20romantic%20background%20with%20soft%20pastel%20colors%2C%20featuring%20cute%20cartoon%20bees%20flying%20around%20carrying%20hearts.%20The%20image%20has%20a%20gradient%20from%20soft%20yellow%20to%20pink%2C%20with%20subtle%20honeycomb%20patterns.%20The%20style%20is%20playful%2C%20whimsical%20and%20perfect%20for%20a%20dating%20website.%20The%20left%20side%20is%20lighter%20to%20allow%20text%20to%20be%20clearly%20visible%2C%20while%20the%20right%20side%20has%20more%20decorative%20elements%20and%20bees.%20The%20transition%20between%20left%20and%20right%20is%20natural%20and%20smooth.&width=1920&height=1080&seq=1&orientation=landscape');" class="absolute inset-0 bg-cover bg-center opacity-30"></div>
+<div class="container mx-auto px-4 py-20 md:py-32 relative z-10">
+<div class="max-w-3xl mx-auto text-center">
+<h1 class="text-4xl md:text-6xl font-bold mb-6 text-gray-800">Find Your <span class="text-yellow-500">Sweet</span> Connection</h1>
+<p class="text-3xl md:text-4xl font-handwritten mb-8 text-pink-500">Let love buzz in</p>
+<p class="text-lg text-gray-600 mb-10 max-w-xl mx-auto">Join thousands of singles looking for meaningful connections. Our unique matching algorithm helps you find your perfect honey match!</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="px-8 py-4 bg-primary hover:bg-yellow-300 text-gray-800 font-bold rounded-button shadow-md transition-all transform hover:scale-105 whitespace-nowrap">
+Get Started
+</button>
+<button class="px-8 py-4 bg-white hover:bg-gray-50 text-gray-800 font-bold rounded-button shadow-md border border-gray-200 transition-all whitespace-nowrap">
+Learn More
+</button>
+</div>
+</div>
+</div>
+<!-- Floating Elements -->
+<div class="absolute top-1/4 left-10 floating">
+<div class="w-12 h-12 flex items-center justify-center text-yellow-400">
+<i class="ri-heart-3-fill ri-2x"></i>
+</div>
+</div>
+<div class="absolute top-1/3 right-20 floating-slow">
+<div class="w-16 h-16 flex items-center justify-center text-pink-300">
+<i class="ri-heart-3-fill ri-2x"></i>
+</div>
+</div>
+<div class="absolute bottom-1/4 left-1/4 floating-slower">
+<div class="w-10 h-10 flex items-center justify-center text-yellow-500">
+<i class="ri-heart-3-fill ri-xl"></i>
+</div>
+</div>
+<div class="absolute top-1/4 right-10 floating">
+<div class="w-12 h-12 flex items-center justify-center text-yellow-400">
+<i class="ri-heart-3-fill ri-2x"></i>
+</div>
+</div>
+<div class="absolute bottom-1/4 right-1/4 floating-slower">
+<div class="w-10 h-10 flex items-center justify-center text-yellow-500">
+<i class="ri-heart-3-fill ri-xl"></i>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-16 bg-gradient-to-b from-white to-yellow-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">How It <span class="text-yellow-500">Works</span></h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto">Finding your perfect match is as sweet as honey with our simple process</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="honeycomb-card bg-white p-8 rounded-lg shadow-md text-center">
+<div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-yellow-500">
+<i class="ri-user-heart-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3 text-gray-800">Create Your Profile</h3>
+<p class="text-gray-600">Tell us about yourself and what you're looking for in a partner. Add your best photos to show your personality.</p>
+</div>
+<div class="honeycomb-card bg-white p-8 rounded-lg shadow-md text-center">
+<div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-pink-500">
+<i class="ri-search-heart-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3 text-gray-800">Discover Matches</h3>
+<p class="text-gray-600">Our algorithm finds compatible matches based on your preferences, interests, and personality traits.</p>
+</div>
+<div class="honeycomb-card bg-white p-8 rounded-lg shadow-md text-center">
+<div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+<div class="w-10 h-10 flex items-center justify-center text-yellow-500">
+<i class="ri-chat-heart-line ri-2x"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-3 text-gray-800">Connect & Chat</h3>
+<p class="text-gray-600">Start conversations with your matches through our cute bee-themed chat interface and plan your first date!</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Features You'll <span class="text-pink-400">Love</span></h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto">Discover all the ways Bee My Love helps you find your perfect match</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<div class="mb-8">
+<div class="flex items-start mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-yellow-100 rounded-full mr-4 mt-1 flex-shrink-0">
+<div class="w-6 h-6 flex items-center justify-center text-yellow-500">
+<i class="ri-profile-line"></i>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2 text-gray-800">Detailed Profiles</h3>
+<p class="text-gray-600">Create a rich profile with photos, preferences, and interests to showcase your unique personality.</p>
+</div>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-pink-100 rounded-full mr-4 mt-1 flex-shrink-0">
+<div class="w-6 h-6 flex items-center justify-center text-pink-500">
+<i class="ri-filter-3-line"></i>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2 text-gray-800">Advanced Filters</h3>
+<p class="text-gray-600">Find exactly what you're looking for with filters for height, style, food preferences, and more.</p>
+</div>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-yellow-100 rounded-full mr-4 mt-1 flex-shrink-0">
+<div class="w-6 h-6 flex items-center justify-center text-yellow-500">
+<i class="ri-chat-smile-3-line"></i>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2 text-gray-800">Cute Chat Interface</h3>
+<p class="text-gray-600">Connect with matches through our adorable bee-themed messaging system with custom emojis.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-pink-100 rounded-full mr-4 mt-1 flex-shrink-0">
+<div class="w-6 h-6 flex items-center justify-center text-pink-500">
+<i class="ri-shield-check-line"></i>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2 text-gray-800">Safe Environment</h3>
+<p class="text-gray-600">Verified profiles and privacy controls ensure a secure and comfortable dating experience.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="rounded-2xl overflow-hidden shadow-xl">
+<img src="https://readdy.ai/api/search-image?query=A%20modern%20smartphone%20displaying%20a%20dating%20app%20interface%20with%20a%20bee%20theme.%20The%20app%20shows%20user%20profiles%20with%20photos%20and%20matching%20preferences.%20The%20interface%20has%20honeycomb%20patterns%2C%20hearts%2C%20and%20cute%20bee%20decorations.%20The%20design%20uses%20pastel%20yellow%20and%20pink%20colors.%20The%20screen%20shows%20a%20chat%20interface%20with%20message%20bubbles%20shaped%20like%20honeycombs.%20The%20style%20is%20clean%2C%20modern%20and%20appealing%20to%20Gen-Z%20users.&width=600&height=800&seq=2&orientation=portrait" alt="App Interface" class="w-full h-auto object-cover object-top">
+</div>
+<div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg">
+<div class="w-16 h-16 flex items-center justify-center text-yellow-500">
+<i class="ri-heart-3-fill ri-3x"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Profile Creation Preview -->
+<section class="py-16 bg-gradient-to-b from-yellow-50 to-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Create Your <span class="text-yellow-500">Profile</span></h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto">Express yourself and find matches who appreciate the real you</p>
+</div>
+<div class="bg-white rounded-xl shadow-lg p-6 md:p-10 max-w-4xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-1">
+<div class="relative">
+<div class="w-40 h-40 mx-auto bg-gray-100 rounded-full overflow-hidden border-4 border-yellow-200 relative">
+<div class="absolute inset-0 flex items-center justify-center text-gray-400">
+<div class="w-12 h-12 flex items-center justify-center">
+<i class="ri-user-add-line ri-2x"></i>
+</div>
+</div>
+</div>
+<div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+<div class="w-12 h-6 flex items-end justify-center">
+<div class="w-2 h-5 bg-black rounded-full mr-1"></div>
+<div class="w-2 h-5 bg-black rounded-full ml-1"></div>
+</div>
+</div>
+<button class="mt-4 w-full py-2 bg-primary hover:bg-yellow-300 text-gray-700 rounded-button transition-colors whitespace-nowrap">
+Upload Photo
+</button>
+</div>
+<div class="mt-8">
+<h3 class="text-lg font-bold mb-4 text-gray-800">Basic Info</h3>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+<input type="text" class="w-full px-4 py-2 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-transparent" placeholder="Your name">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Age</label>
+<input type="number" class="w-full px-4 py-2 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-transparent" placeholder="Your age">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Location</label>
+<input type="text" class="w-full px-4 py-2 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-transparent" placeholder="Your city">
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-2">
+<h3 class="text-lg font-bold mb-4 text-gray-800">Your Preferences</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<h4 class="text-md font-medium mb-3 text-gray-700">Physical Preferences</h4>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Height Range</label>
+<div class="flex items-center">
+<span class="text-sm text-gray-500 mr-2">150cm</span>
+<input type="range" min="150" max="200" class="custom-range flex-grow" value="175">
+<span class="text-sm text-gray-500 ml-2">200cm</span>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Skin Tone</label>
+<div class="flex flex-wrap gap-2">
+<div class="custom-radio">
+<input type="radio" id="skin1" name="skin_tone">
+<label for="skin1">Fair</label>
+</div>
+<div class="custom-radio">
+<input type="radio" id="skin2" name="skin_tone">
+<label for="skin2">Medium</label>
+</div>
+<div class="custom-radio">
+<input type="radio" id="skin3" name="skin_tone">
+<label for="skin3">Olive</label>
+</div>
+<div class="custom-radio">
+<input type="radio" id="skin4" name="skin_tone">
+<label for="skin4">Brown</label>
+</div>
+<div class="custom-radio">
+<input type="radio" id="skin5" name="skin_tone">
+<label for="skin5">Dark</label>
+</div>
+<div class="custom-radio">
+<input type="radio" id="skin6" name="skin_tone" checked>
+<label for="skin6">No Preference</label>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Hair Color</label>
+<div class="flex flex-wrap gap-2">
+<div class="custom-checkbox">
+<input type="checkbox" id="hair1" name="hair_color">
+<label for="hair1">Black</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="hair2" name="hair_color">
+<label for="hair2">Brown</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="hair3" name="hair_color">
+<label for="hair3">Blonde</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="hair4" name="hair_color">
+<label for="hair4">Red</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="hair5" name="hair_color" checked>
+<label for="hair5">Any</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-md font-medium mb-3 text-gray-700">Lifestyle Preferences</h4>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Dressing Style</label>
+<div class="flex flex-wrap gap-2">
+<div class="custom-checkbox">
+<input type="checkbox" id="style1" name="style">
+<label for="style1">Western</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="style2" name="style" checked>
+<label for="style2">Formal</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="style3" name="style">
+<label for="style3">Traditional</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="style4" name="style">
+<label for="style4">Casual</label>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Food Preference</label>
+<div class="flex items-center gap-4">
+<div class="custom-radio">
+<input type="radio" id="food1" name="food_pref">
+<label for="food1">Vegetarian</label>
+</div>
+<div class="custom-radio">
+<input type="radio" id="food2" name="food_pref">
+<label for="food2">Non-Vegetarian</label>
+</div>
+<div class="custom-radio">
+<input type="radio" id="food3" name="food_pref" checked>
+<label for="food3">Both</label>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Interests/Fandom</label>
+<div class="flex flex-wrap gap-2">
+<div class="custom-checkbox">
+<input type="checkbox" id="int1" name="interests">
+<label for="int1">TFI</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="int2" name="interests" checked>
+<label for="int2">BTS Army</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="int3" name="interests">
+<label for="int3">Bollywood</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="int4" name="interests" checked>
+<label for="int4">Hollywood</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="int5" name="interests">
+<label for="int5">Gaming</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="int6" name="interests">
+<label for="int6">Travel</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="text-md font-medium mb-3 text-gray-700">Age Preference</h4>
+<div class="flex items-center">
+<span class="text-sm text-gray-500 mr-2">18</span>
+<div class="flex-grow px-4">
+<input type="range" min="18" max="60" class="custom-range w-full" value="30">
+</div>
+<span class="text-sm text-gray-500 ml-2">60</span>
+</div>
+<p class="text-center text-sm text-gray-500 mt-2">Preferred age: 30</p>
+</div>
+<div class="mt-8 flex justify-end">
+<button class="px-6 py-3 bg-primary hover:bg-yellow-300 text-gray-700 font-bold rounded-button shadow-md transition-colors whitespace-nowrap">
+Save Profile
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Search & Filter Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Find Your <span class="text-pink-400">Match</span></h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto">Browse through profiles and discover your perfect match</p>
+</div>
+<div class="flex flex-col md:flex-row gap-8">
+<!-- Filter Sidebar -->
+<div class="w-full md:w-1/4 bg-white rounded-xl shadow-md p-6">
+<h3 class="text-xl font-bold mb-4 text-gray-800">Filters</h3>
+<div class="space-y-6">
+<div>
+<h4 class="text-md font-medium mb-3 text-gray-700 flex items-center justify-between">
+<span>Age Range</span>
+<button class="text-yellow-500 text-sm">Reset</button>
+</h4>
+<div class="px-2">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm text-gray-500">18</span>
+<span class="text-sm text-gray-500">60</span>
+</div>
+<input type="range" min="18" max="60" class="custom-range w-full" value="30">
+<p class="text-center text-sm text-gray-500 mt-2">18-30 years</p>
+</div>
+</div>
+<div>
+<h4 class="text-md font-medium mb-3 text-gray-700 flex items-center justify-between">
+<span>Height</span>
+<button class="text-yellow-500 text-sm">Reset</button>
+</h4>
+<div class="px-2">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm text-gray-500">150cm</span>
+<span class="text-sm text-gray-500">200cm</span>
+</div>
+<input type="range" min="150" max="200" class="custom-range w-full" value="175">
+<p class="text-center text-sm text-gray-500 mt-2">150-175 cm</p>
+</div>
+</div>
+<div>
+<h4 class="text-md font-medium mb-3 text-gray-700">Interests</h4>
+<div class="space-y-2">
+<div class="custom-checkbox">
+<input type="checkbox" id="filter_int1" name="filter_interests">
+<label for="filter_int1">TFI</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="filter_int2" name="filter_interests" checked>
+<label for="filter_int2">BTS Army</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="filter_int3" name="filter_interests">
+<label for="filter_int3">Bollywood</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="filter_int4" name="filter_interests">
+<label for="filter_int4">Hollywood</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="filter_int5" name="filter_interests">
+<label for="filter_int5">Gaming</label>
+</div>
+<div class="custom-checkbox">
+<input type="checkbox" id="filter_int6" name="filter_interests">
+<label for="filter_int6">Travel</label>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-md font-medium mb-3 text-gray-700">Food Preference</h4>
+<div class="space-y-2">
+<div class="custom-radio">
+<input type="radio" id="filter_food1" name="filter_food_pref">
+<label for="filter_food1">Vegetarian</label>
+</div>
+<div class="custom-radio">
+<input type="radio" id="filter_food2" name="filter_food_pref">
+<label for="filter_food2">Non-Vegetarian</label>
+</div>
+<div class="custom-radio">
+<input type="radio" id="filter_food3" name="filter_food_pref" checked>
+<label for="filter_food3">Both</label>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-md font-medium mb-3 text-gray-700">Online Now</h4>
+<label class="custom-switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+</div>
+<button class="w-full py-3 bg-primary hover:bg-yellow-300 text-gray-700 font-bold rounded-button shadow-md transition-colors mt-4 whitespace-nowrap">
+Apply Filters
+</button>
+</div>
+</div>
+<!-- Search Results -->
+<div class="w-full md:w-3/4">
+<div class="bg-white rounded-xl shadow-md p-4 mb-6">
+<div class="relative">
+<input type="text" class="w-full pl-10 pr-4 py-3 bg-gray-50 border-none rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300" placeholder="Search by name, interests, or location...">
+<div class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-search-line"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Profile Card 1 -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden honeycomb-card">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20smiling%20young%20woman%20with%20long%20brown%20hair%20and%20warm%20brown%20eyes%2C%20looking%20directly%20at%20camera.%20She%20has%20a%20friendly%2C%20approachable%20expression.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=400&height=400&seq=3&orientation=squarish" alt="Profile" class="w-full h-48 object-cover object-top">
+<div class="absolute top-3 right-3 bg-white rounded-full p-1 shadow-md">
+<div class="w-8 h-8 flex items-center justify-center text-pink-500">
+<i class="ri-heart-line"></i>
+</div>
+</div>
+<div class="absolute bottom-3 left-3 bg-green-400 text-white text-xs px-2 py-1 rounded-full">
+Online
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-lg font-bold text-gray-800">Sophia, 26</h3>
+<span class="text-sm text-gray-500">2 km away</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Marketing Executive, BTS Army</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Travel</span>
+<span class="bg-pink-100 text-pink-700 text-xs px-2 py-1 rounded-full">Music</span>
+<span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Food</span>
+</div>
+<button class="w-full py-2 bg-primary hover:bg-yellow-300 text-gray-700 rounded-button transition-colors whitespace-nowrap">
+Say Hello
+</button>
+</div>
+</div>
+<!-- Profile Card 2 -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden honeycomb-card">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20handsome%20young%20man%20with%20short%20dark%20hair%20and%20blue%20eyes%2C%20smiling%20confidently%20at%20camera.%20He%20has%20a%20well-groomed%20appearance%20with%20slight%20stubble.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=400&height=400&seq=4&orientation=squarish" alt="Profile" class="w-full h-48 object-cover object-top">
+<div class="absolute top-3 right-3 bg-white rounded-full p-1 shadow-md">
+<div class="w-8 h-8 flex items-center justify-center text-pink-500">
+<i class="ri-heart-line"></i>
+</div>
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-lg font-bold text-gray-800">Daniel, 29</h3>
+<span class="text-sm text-gray-500">5 km away</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Software Engineer, Hollywood Fan</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Tech</span>
+<span class="bg-pink-100 text-pink-700 text-xs px-2 py-1 rounded-full">Movies</span>
+<span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Hiking</span>
+</div>
+<button class="w-full py-2 bg-primary hover:bg-yellow-300 text-gray-700 rounded-button transition-colors whitespace-nowrap">
+Say Hello
+</button>
+</div>
+</div>
+<!-- Profile Card 3 -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden honeycomb-card">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20beautiful%20young%20woman%20with%20curly%20black%20hair%20and%20green%20eyes%2C%20smiling%20warmly%20at%20camera.%20She%20has%20a%20natural%2C%20fresh-faced%20appearance.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=400&height=400&seq=5&orientation=squarish" alt="Profile" class="w-full h-48 object-cover object-top">
+<div class="absolute top-3 right-3 bg-white rounded-full p-1 shadow-md">
+<div class="w-8 h-8 flex items-center justify-center text-pink-500">
+<i class="ri-heart-line"></i>
+</div>
+</div>
+<div class="absolute bottom-3 left-3 bg-green-400 text-white text-xs px-2 py-1 rounded-full">
+Online
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-lg font-bold text-gray-800">Priya, 24</h3>
+<span class="text-sm text-gray-500">8 km away</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Fashion Designer, Bollywood Fan</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Fashion</span>
+<span class="bg-pink-100 text-pink-700 text-xs px-2 py-1 rounded-full">Dance</span>
+<span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Art</span>
+</div>
+<button class="w-full py-2 bg-primary hover:bg-yellow-300 text-gray-700 rounded-button transition-colors whitespace-nowrap">
+Say Hello
+</button>
+</div>
+</div>
+<!-- Profile Card 4 -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden honeycomb-card">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20handsome%20young%20man%20with%20light%20brown%20hair%20and%20hazel%20eyes%2C%20smiling%20confidently%20at%20camera.%20He%20has%20a%20clean-shaven%2C%20friendly%20appearance.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=400&height=400&seq=6&orientation=squarish" alt="Profile" class="w-full h-48 object-cover object-top">
+<div class="absolute top-3 right-3 bg-white rounded-full p-1 shadow-md">
+<div class="w-8 h-8 flex items-center justify-center text-pink-500">
+<i class="ri-heart-line"></i>
+</div>
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-lg font-bold text-gray-800">Alex, 27</h3>
+<span class="text-sm text-gray-500">3 km away</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Photographer, Gaming Enthusiast</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Photography</span>
+<span class="bg-pink-100 text-pink-700 text-xs px-2 py-1 rounded-full">Gaming</span>
+<span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Coffee</span>
+</div>
+<button class="w-full py-2 bg-primary hover:bg-yellow-300 text-gray-700 rounded-button transition-colors whitespace-nowrap">
+Say Hello
+</button>
+</div>
+</div>
+<!-- Profile Card 5 -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden honeycomb-card">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20beautiful%20young%20woman%20with%20blonde%20hair%20and%20blue%20eyes%2C%20smiling%20warmly%20at%20camera.%20She%20has%20a%20natural%2C%20fresh-faced%20appearance%20with%20light%20makeup.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=400&height=400&seq=7&orientation=squarish" alt="Profile" class="w-full h-48 object-cover object-top">
+<div class="absolute top-3 right-3 bg-white rounded-full p-1 shadow-md">
+<div class="w-8 h-8 flex items-center justify-center text-pink-500">
+<i class="ri-heart-line"></i>
+</div>
+</div>
+<div class="absolute bottom-3 left-3 bg-green-400 text-white text-xs px-2 py-1 rounded-full">
+Online
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-lg font-bold text-gray-800">Emma, 25</h3>
+<span class="text-sm text-gray-500">6 km away</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Teacher, BTS Army</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Books</span>
+<span class="bg-pink-100 text-pink-700 text-xs px-2 py-1 rounded-full">Music</span>
+<span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Yoga</span>
+</div>
+<button class="w-full py-2 bg-primary hover:bg-yellow-300 text-gray-700 rounded-button transition-colors whitespace-nowrap">
+Say Hello
+</button>
+</div>
+</div>
+<!-- Profile Card 6 -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden honeycomb-card">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20handsome%20young%20man%20with%20dark%20skin%2C%20short%20black%20hair%20and%20brown%20eyes%2C%20smiling%20confidently%20at%20camera.%20He%20has%20a%20well-groomed%20appearance%20with%20a%20neat%20beard.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=400&height=400&seq=8&orientation=squarish" alt="Profile" class="w-full h-48 object-cover object-top">
+<div class="absolute top-3 right-3 bg-white rounded-full p-1 shadow-md">
+<div class="w-8 h-8 flex items-center justify-center text-pink-500">
+<i class="ri-heart-line"></i>
+</div>
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-lg font-bold text-gray-800">Rahul, 28</h3>
+<span class="text-sm text-gray-500">4 km away</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Chef, Bollywood Fan</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Cooking</span>
+<span class="bg-pink-100 text-pink-700 text-xs px-2 py-1 rounded-full">Movies</span>
+<span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Travel</span>
+</div>
+<button class="w-full py-2 bg-primary hover:bg-yellow-300 text-gray-700 rounded-button transition-colors whitespace-nowrap">
+Say Hello
+</button>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-center">
+<button class="px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-bold rounded-button shadow-md border border-gray-200 transition-colors whitespace-nowrap">
+Load More Profiles
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Chat Interface -->
+<section class="py-16 bg-gradient-to-b from-white to-yellow-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Chat with Your <span class="text-pink-400">Matches</span></h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto">Connect with your matches through our adorable bee-themed chat</p>
+</div>
+<div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-3">
+<!-- Chat List -->
+<div class="border-r border-gray-100">
+<div class="p-4 border-b border-gray-100">
+<div class="relative">
+<input type="text" class="w-full pl-10 pr-4 py-2 bg-gray-50 border-none rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-yellow-300" placeholder="Search conversations...">
+<div class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-search-line"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="overflow-y-auto h-96">
+<div class="p-3 border-b border-gray-100 bg-yellow-50">
+<div class="flex items-center">
+<div class="relative mr-3">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20beautiful%20young%20woman%20with%20curly%20black%20hair%20and%20green%20eyes%2C%20smiling%20warmly%20at%20camera.%20She%20has%20a%20natural%2C%20fresh-faced%20appearance.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=100&height=100&seq=9&orientation=squarish" alt="Profile" class="w-12 h-12 rounded-full object-cover object-top">
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></div>
+</div>
+<div class="flex-grow">
+<h4 class="text-sm font-bold text-gray-800">Priya</h4>
+<p class="text-xs text-gray-500 truncate">Hey there! How's your day going?</p>
+</div>
+<div class="text-xs text-gray-400">2m</div>
+</div>
+</div>
+<div class="p-3 border-b border-gray-100 hover:bg-gray-50 transition-colors">
+<div class="flex items-center">
+<div class="relative mr-3">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20handsome%20young%20man%20with%20short%20dark%20hair%20and%20blue%20eyes%2C%20smiling%20confidently%20at%20camera.%20He%20has%20a%20well-groomed%20appearance%20with%20slight%20stubble.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=100&height=100&seq=10&orientation=squarish" alt="Profile" class="w-12 h-12 rounded-full object-cover object-top">
+</div>
+<div class="flex-grow">
+<h4 class="text-sm font-bold text-gray-800">Daniel</h4>
+<p class="text-xs text-gray-500 truncate">Would you like to grab coffee sometime?</p>
+</div>
+<div class="text-xs text-gray-400">1h</div>
+</div>
+</div>
+<div class="p-3 border-b border-gray-100 hover:bg-gray-50 transition-colors">
+<div class="flex items-center">
+<div class="relative mr-3">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20beautiful%20young%20woman%20with%20blonde%20hair%20and%20blue%20eyes%2C%20smiling%20warmly%20at%20camera.%20She%20has%20a%20natural%2C%20fresh-faced%20appearance%20with%20light%20makeup.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=100&height=100&seq=11&orientation=squarish" alt="Profile" class="w-12 h-12 rounded-full object-cover object-top">
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></div>
+</div>
+<div class="flex-grow">
+<h4 class="text-sm font-bold text-gray-800">Emma</h4>
+<p class="text-xs text-gray-500 truncate">I love that band too! What's your favorite song?</p>
+</div>
+<div class="text-xs text-gray-400">3h</div>
+</div>
+</div>
+<div class="p-3 border-b border-gray-100 hover:bg-gray-50 transition-colors">
+<div class="flex items-center">
+<div class="relative mr-3">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20handsome%20young%20man%20with%20light%20brown%20hair%20and%20hazel%20eyes%2C%20smiling%20confidently%20at%20camera.%20He%20has%20a%20clean-shaven%2C%20friendly%20appearance.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=100&height=100&seq=12&orientation=squarish" alt="Profile" class="w-12 h-12 rounded-full object-cover object-top">
+</div>
+<div class="flex-grow">
+<h4 class="text-sm font-bold text-gray-800">Alex</h4>
+<p class="text-xs text-gray-500 truncate">Check out this photo I took yesterday!</p>
+</div>
+<div class="text-xs text-gray-400">1d</div>
+</div>
+</div>
+<div class="p-3 border-b border-gray-100 hover:bg-gray-50 transition-colors">
+<div class="flex items-center">
+<div class="relative mr-3">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20smiling%20young%20woman%20with%20long%20brown%20hair%20and%20warm%20brown%20eyes%2C%20looking%20directly%20at%20camera.%20She%20has%20a%20friendly%2C%20approachable%20expression.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=100&height=100&seq=13&orientation=squarish" alt="Profile" class="w-12 h-12 rounded-full object-cover object-top">
+</div>
+<div class="flex-grow">
+<h4 class="text-sm font-bold text-gray-800">Sophia</h4>
+<p class="text-xs text-gray-500 truncate">That sounds like a great plan!</p>
+</div>
+<div class="text-xs text-gray-400">2d</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat Area -->
+<div class="md:col-span-2 flex flex-col h-96">
+<!-- Chat Header -->
+<div class="p-4 border-b border-gray-100 flex items-center">
+<div class="relative mr-3">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20beautiful%20young%20woman%20with%20curly%20black%20hair%20and%20green%20eyes%2C%20smiling%20warmly%20at%20camera.%20She%20has%20a%20natural%2C%20fresh-faced%20appearance.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=100&height=100&seq=14&orientation=squarish" alt="Profile" class="w-10 h-10 rounded-full object-cover object-top">
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-400 rounded-full border-2 border-white"></div>
+</div>
+<div>
+<h4 class="text-sm font-bold text-gray-800">Priya, 24</h4>
+<p class="text-xs text-gray-500">Online</p>
+</div>
+<div class="ml-auto flex space-x-2">
+<button class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-yellow-500 rounded-full hover:bg-yellow-50">
+<i class="ri-phone-line"></i>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-yellow-500 rounded-full hover:bg-yellow-50">
+<i class="ri-vidicon-line"></i>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-yellow-500 rounded-full hover:bg-yellow-50">
+<i class="ri-more-2-line"></i>
+</button>
+</div>
+</div>
+<!-- Chat Messages -->
+<div class="flex-grow p-4 overflow-y-auto bg-gray-50">
+<div class="text-center text-xs text-gray-500 mb-4">Today, 2:30 PM</div>
+<div class="message-bubble received">
+<p>Hey there! I noticed we both love Bollywood movies. What's your favorite one?</p>
+<div class="text-right text-xs text-gray-500 mt-1">2:30 PM</div>
+</div>
+<div class="message-bubble sent">
+<p>Hi Priya! Nice to connect with you! I'm a huge fan of "Dil Chahta Hai" - it's a classic! What about you?</p>
+<div class="text-right text-xs text-gray-500 mt-1">2:32 PM</div>
+</div>
+<div class="message-bubble received">
+<p>Oh I love that one too! I'm also a big fan of "Queen" - such an empowering story!</p>
+<div class="text-right text-xs text-gray-500 mt-1">2:33 PM</div>
+</div>
+<div class="message-bubble received">
+<p>I see you're into fashion too. Do you have a favorite designer?</p>
+<div class="text-right text-xs text-gray-500 mt-1">2:34 PM</div>
+</div>
+<div class="message-bubble sent">
+<p>Yes! I love Sabyasachi's work - the colors and patterns are amazing. I'm actually studying fashion design right now.</p>
+<div class="text-right text-xs text-gray-500 mt-1">2:36 PM</div>
+</div>
+<div class="message-bubble received">
+<p>That's so cool! I work as a fashion designer myself. Maybe we could grab coffee sometime and talk about it?</p>
+<div class="text-right text-xs text-gray-500 mt-1">2:38 PM</div>
+</div>
+<div class="flex items-center mt-4">
+<div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center mr-2 animate-pulse">
+<div class="w-1 h-1 bg-gray-500 rounded-full"></div>
+</div>
+<div class="text-sm text-gray-500">Priya is typing...</div>
+</div>
+</div>
+<!-- Chat Input -->
+<div class="p-3 border-t border-gray-100 bg-white">
+<div class="flex items-center">
+<button class="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-yellow-500">
+<i class="ri-emotion-happy-line ri-lg"></i>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-yellow-500">
+<i class="ri-image-line ri-lg"></i>
+</button>
+<input type="text" class="flex-grow mx-2 px-4 py-2 bg-gray-50 border-none rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-yellow-300" placeholder="Type a message...">
+<button class="w-10 h-10 flex items-center justify-center bg-primary hover:bg-yellow-300 text-gray-700 rounded-full transition-colors">
+<i class="ri-send-plane-fill ri-lg"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Success <span class="text-yellow-500">Stories</span></h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto">Hear from couples who found their sweet connection on Bee My Love</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-6 rounded-xl shadow-md">
+<div class="flex items-center mb-4">
+<div class="flex -space-x-4">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20beautiful%20young%20woman%20with%20blonde%20hair%20and%20blue%20eyes%2C%20smiling%20warmly%20at%20camera.%20She%20has%20a%20natural%2C%20fresh-faced%20appearance%20with%20light%20makeup.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=100&height=100&seq=15&orientation=squarish" alt="Profile" class="w-12 h-12 rounded-full border-2 border-white object-cover object-top">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20handsome%20young%20man%20with%20short%20dark%20hair%20and%20blue%20eyes%2C%20smiling%20confidently%20at%20camera.%20He%20has%20a%20well-groomed%20appearance%20with%20slight%20stubble.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=100&height=100&seq=16&orientation=squarish" alt="Profile" class="w-12 h-12 rounded-full border-2 border-white object-cover object-top">
+</div>
+<div class="ml-4">
+<h3 class="text-lg font-bold text-gray-800">Emma & Daniel</h3>
+<p class="text-sm text-gray-500">Together for 1 year</p>
+</div>
+</div>
+<p class="text-gray-600 mb-4">"We matched because we both loved BTS and coffee! Our first date was at a coffee shop where we talked for hours about our favorite songs. Now we're planning our future together!"</p>
+<div class="flex">
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-md">
+<div class="flex items-center mb-4">
+<div class="flex -space-x-4">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20beautiful%20young%20woman%20with%20curly%20black%20hair%20and%20green%20eyes%2C%20smiling%20warmly%20at%20camera.%20She%20has%20a%20natural%2C%20fresh-faced%20appearance.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=100&height=100&seq=17&orientation=squarish" alt="Profile" class="w-12 h-12 rounded-full border-2 border-white object-cover object-top">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20handsome%20young%20man%20with%20dark%20skin%2C%20short%20black%20hair%20and%20brown%20eyes%2C%20smiling%20confidently%20at%20camera.%20He%20has%20a%20well-groomed%20appearance%20with%20a%20neat%20beard.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=100&height=100&seq=18&orientation=squarish" alt="Profile" class="w-12 h-12 rounded-full border-2 border-white object-cover object-top">
+</div>
+<div class="ml-4">
+<h3 class="text-lg font-bold text-gray-800">Priya & Rahul</h3>
+<p class="text-sm text-gray-500">Engaged after 2 years</p>
+</div>
+</div>
+<p class="text-gray-600 mb-4">"We connected over our love for Bollywood and food. Rahul cooked me dinner on our third date, and I knew he was the one! We're getting married next spring!"</p>
+<div class="flex">
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-md">
+<div class="flex items-center mb-4">
+<div class="flex -space-x-4">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20smiling%20young%20woman%20with%20long%20brown%20hair%20and%20warm%20brown%20eyes%2C%20looking%20directly%20at%20camera.%20She%20has%20a%20friendly%2C%20approachable%20expression.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=100&height=100&seq=19&orientation=squarish" alt="Profile" class="w-12 h-12 rounded-full border-2 border-white object-cover object-top">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20portrait%20photo%20of%20a%20handsome%20young%20man%20with%20light%20brown%20hair%20and%20hazel%20eyes%2C%20smiling%20confidently%20at%20camera.%20He%20has%20a%20clean-shaven%2C%20friendly%20appearance.%20The%20photo%20has%20soft%20natural%20lighting%20against%20a%20simple%20neutral%20background.%20The%20image%20is%20high%20quality%20and%20looks%20like%20a%20dating%20profile%20picture%2C%20with%20professional%20composition%20and%20natural%20colors.&width=100&height=100&seq=20&orientation=squarish" alt="Profile" class="w-12 h-12 rounded-full border-2 border-white object-cover object-top">
+</div>
+<div class="ml-4">
+<h3 class="text-lg font-bold text-gray-800">Sophia & Alex</h3>
+<p class="text-sm text-gray-500">Dating for 6 months</p>
+</div>
+</div>
+<p class="text-gray-600 mb-4">"We matched because we both love photography and travel. Our first date was at a photo exhibition, and we've been exploring new places together ever since. So grateful we found each other!"</p>
+<div class="flex">
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-16 bg-gradient-to-r from-yellow-100 to-pink-100 relative overflow-hidden">
+<div class="honeycomb-pattern absolute inset-0 opacity-20"></div>
+<div class="container mx-auto px-4 relative z-10">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Ready to Find Your <span class="text-yellow-500">Sweet</span> Connection?</h2>
+<p class="text-lg text-gray-600 mb-8">Join thousands of singles who have already found their perfect match on Bee My Love.</p>
+<button class="px-8 py-4 bg-primary hover:bg-yellow-300 text-gray-800 font-bold rounded-button shadow-md transition-all transform hover:scale-105 whitespace-nowrap">
+Get Started Now
+</button>
+<div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-6">
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-md mr-4">
+<div class="w-6 h-6 flex items-center justify-center text-yellow-500">
+<i class="ri-user-heart-line"></i>
+</div>
+</div>
+<div class="text-left">
+<h3 class="text-xl font-bold text-gray-800">50,000+</h3>
+<p class="text-gray-600">Active Users</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-md mr-4">
+<div class="w-6 h-6 flex items-center justify-center text-pink-500">
+<i class="ri-heart-3-line"></i>
+</div>
+</div>
+<div class="text-left">
+<h3 class="text-xl font-bold text-gray-800">10,000+</h3>
+<p class="text-gray-600">Successful Matches</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-md mr-4">
+<div class="w-6 h-6 flex items-center justify-center text-yellow-500">
+<i class="ri-group-line"></i>
+</div>
+</div>
+<div class="text-left">
+<h3 class="text-xl font-bold text-gray-800">1,000+</h3>
+<p class="text-gray-600">Happy Couples</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Elements -->
+<div class="absolute bottom-10 left-10 floating">
+<div class="w-12 h-12 flex items-center justify-center text-yellow-400">
+<i class="ri-heart-3-fill ri-2x"></i>
+</div>
+</div>
+<div class="absolute top-10 right-10 floating-slow">
+<div class="w-16 h-16 flex items-center justify-center text-pink-300">
+<i class="ri-heart-3-fill ri-2x"></i>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-12 relative overflow-hidden">
+<div class="honeycomb-pattern absolute inset-0 opacity-5"></div>
+<div class="container mx-auto px-4 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<a href="#" class="flex items-center gap-2 mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-yellow-300 rounded-full">
+<i class="ri-heart-3-fill text-white ri-lg"></i>
+</div>
+<span class="text-2xl font-['Pacifico'] text-yellow-300">Bee My Love</span>
+</a>
+<p class="text-gray-400 mb-4">Find your sweet connection with our playful and modern dating platform.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 hover:bg-yellow-500 rounded-full transition-colors">
+<div class="w-5 h-5 flex items-center justify-center text-white">
+<i class="ri-facebook-fill"></i>
+</div>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 hover:bg-yellow-500 rounded-full transition-colors">
+<div class="w-5 h-5 flex items-center justify-center text-white">
+<i class="ri-twitter-x-fill"></i>
+</div>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 hover:bg-yellow-500 rounded-full transition-colors">
+<div class="w-5 h-5 flex items-center justify-center text-white">
+<i class="ri-instagram-fill"></i>
+</div>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 hover:bg-yellow-500 rounded-full transition-colors">
+<div class="w-5 h-5 flex items-center justify-center text-white">
+<i class="ri-tiktok-fill"></i>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-4">Company</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors">Careers</a></li>
+<li><a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors">Press</a></li>
+<li><a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors">Blog</a></li>
+<li><a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-4">Support</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors">Help Center</a></li>
+<li><a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors">Safety Tips</a></li>
+<li><a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors">Community Guidelines</a></li>
+<li><a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors">Report a Problem</a></li>
+<li><a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors">Privacy Policy</a></li>
+<li><a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-4">Subscribe</h3>
+<p class="text-gray-400 mb-4">Get dating tips and special offers delivered to your inbox.</p>
+<div class="flex mb-4">
+<input type="email" class="flex-grow px-4 py-2 bg-gray-700 border-none rounded-l-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-300" placeholder="Your email">
+<button class="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-800 font-bold rounded-r-lg transition-colors whitespace-nowrap">
+Subscribe
+</button>
+</div>
+<div class="flex flex-wrap gap-2">
+<div class="w-8 h-8 flex items-center justify-center text-gray-400">
+<i class="ri-visa-fill ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-400">
+<i class="ri-mastercard-fill ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-400">
+<i class="ri-paypal-fill ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-400">
+<i class="ri-apple-fill ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-400">
+<i class="ri-google-fill ri-lg"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500">
+<p>© 2025 Bee My Love. All rights reserved. Made with <span class="text-pink-500">♥</span> for singles everywhere.</p>
+</div>
+</div>
+</footer>
+<!-- Chat Bubble -->
+<div class="fixed bottom-6 right-6 z-50">
+<button class="w-16 h-16 bg-primary hover:bg-yellow-300 rounded-full shadow-lg flex items-center justify-center transition-colors">
+<div class="w-8 h-8 flex items-center justify-center text-gray-800">
+<i class="ri-chat-smile-3-fill ri-lg"></i>
+</div>
+</button>
+</div>
+<script id="customFormControls">
+document.addEventListener('DOMContentLoaded', function() {
+// Custom Range Input
+const rangeInputs = document.querySelectorAll('.custom-range');
+rangeInputs.forEach(input => {
+input.addEventListener('input', function() {
+const nearestParagraph = this.closest('div').nextElementSibling;
+if (nearestParagraph && nearestParagraph.tagName === 'P') {
+if (this.id === 'ageRange') {
+nearestParagraph.textContent = `Preferred age: ${this.value}`;
+} else if (this.min === '18' && this.max === '60') {
+nearestParagraph.textContent = `${this.min}-${this.value} years`;
+} else if (this.min === '150' && this.max === '200') {
+nearestParagraph.textContent = `${this.min}-${this.value} cm`;
+}
+}
+});
+});
+});
+</script>
+<script id="animationControls">
+document.addEventListener('DOMContentLoaded', function() {
+// Bee animations
+const bees = document.querySelectorAll('.bee');
+bees.forEach(bee => {
+setInterval(() => {
+const randomX = Math.floor(Math.random() * window.innerWidth);
+const randomY = Math.floor(Math.random() * window.innerHeight);
+bee.style.transform = `translate(${randomX}px, ${randomY}px)`;
+}, 15000);
+});
+// Heart hover effects
+const heartIcons = document.querySelectorAll('.ri-heart-line');
+heartIcons.forEach(icon => {
+icon.parentElement.addEventListener('mouseover', function() {
+icon.classList.remove('ri-heart-line');
+icon.classList.add('ri-heart-fill');
+icon.classList.add('text-pink-500');
+});
+icon.parentElement.addEventListener('mouseout', function() {
+icon.classList.remove('ri-heart-fill');
+icon.classList.remove('text-pink-500');
+icon.classList.add('ri-heart-line');
+});
+});
+});
+</script>
+<script id="chatInterface">
+document.addEventListener('DOMContentLoaded', function() {
+// Chat interface
+const chatMessages = document.querySelector('.chat-messages');
+const chatInput = document.querySelector('input[placeholder="Type a message..."]');
+const sendButton = chatInput ? chatInput.nextElementSibling : null;
+if (chatInput && sendButton) {
+sendButton.addEventListener('click', sendMessage);
+chatInput.addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+sendMessage();
+}
+});
+}
+function sendMessage() {
+if (chatInput.value.trim() === '') return;
+const messageContainer = document.querySelector('.overflow-y-auto.bg-gray-50');
+if (!messageContainer) return;
+const newMessage = document.createElement('div');
+newMessage.className = 'message-bubble sent';
+newMessage.innerHTML = `
+<p>${chatInput.value}</p>
+<div class="text-right text-xs text-gray-500 mt-1">${getCurrentTime()}</div>
+`;
+messageContainer.appendChild(newMessage);
+messageContainer.scrollTop = messageContainer.scrollHeight;
+chatInput.value = '';
+}
+function getCurrentTime() {
+const now = new Date();
+let hours = now.getHours();
+const minutes = now.getMinutes().toString().padStart(2, '0');
+const ampm = hours >= 12 ? 'PM' : 'AM';
+hours = hours % 12;
+hours = hours ? hours : 12;
+return `${hours}:${minutes} ${ampm}`;
+}
+});
+</script>
+</body>
+</html>
